@@ -10,10 +10,8 @@ class GeographicShape(models.Model):
     area                    = models.FloatField(blank=True, null=True)
     area_description        = models.CharField(max_length=255, blank=True, null=True)
     fips                    = models.CharField(max_length=255, blank=True, null=True)
-
-    poly            = models.PolygonField(srid=4326)
-
-    objects         = models.GeoManager()
+    poly                    = models.PolygonField(srid=4326)
+    objects                 = models.GeoManager()
 
     class Meta:
         abstract = True
@@ -26,10 +24,7 @@ class GeographicEvent(models.Model):
     start_date_time         = models.DateTimeField()
     end_date_time           = models.DateTimeField(blank=True, null=True)
     point                   = models.PointField(blank=True, null=True)
-
-    related_geographies     = models.ManyToManyField(GeographicShape, blank=True, null=True)
-
-    objects         = models.GeoManager()
+    objects                 = models.GeoManager()
 
     class Meta:
         abstract = True
