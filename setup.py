@@ -9,7 +9,7 @@ setup(name='django-geodyssey',
         url='https://github.com/wpmedia/django-geodyssey',
         packages = ['geodyssey',],
         license = 'MIT',
-        requires = ['django>=1.3',]
+        requires = ['django>=1.3',],
         classifiers=[
             'Environment :: Web Environment',
             'Framework :: Django',
