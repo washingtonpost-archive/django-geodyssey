@@ -10,7 +10,7 @@ class GeographicShape(models.Model):
     area                    = models.FloatField(blank=True, null=True)
     area_description        = models.CharField(max_length=255, blank=True, null=True)
     fips                    = models.CharField(max_length=255, blank=True, null=True)
-    poly                    = models.PolygonField(srid=4326)
+    poly                    = models.MultiPolygonField(srid=4326)
     objects                 = models.GeoManager()
 
     class Meta:
